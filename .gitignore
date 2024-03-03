@@ -1,0 +1,10 @@
+.directory
+build-smartcanteen-client-unknown-Debug/
+build-smartcanteen-server-unknown-Debug/
+build-smartcanteen-client-unknown-Release/
+build-smartcanteen-server-unknown-Release/
+build/
+smartcanteen-client/build/
+smartcanteen-client/CMakeLists.txt.user
+smartcanteen-server/build/
+smartcanteen-server/CMakeLists.txt.user
