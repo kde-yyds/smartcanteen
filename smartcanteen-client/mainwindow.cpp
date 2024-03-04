@@ -3,7 +3,6 @@
 
 
 #include "config.h"
-#include "standardPath.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

@@ -4,9 +4,8 @@
 
 #include <string>
 #include <cstring>
+#include <boost/filesystem.hpp>
 #include "checkOS.h"
-
-
 
 char* getHomeDir()
 {
@@ -18,8 +17,24 @@ char* getHomeDir()
 
 char* getConfigDir()
 {
-    char *configDir = new char[50];
+    char *configDir = new char[100];
     strcat(configDir,getHomeDir());
-    strcat(configDir,"/.config/");
+    strcat(configDir,"/.config/smartcanteen-client");
+    if (!boost::filesystem::is_directory(configDir))
+    {
+        boost::filesystem::create_directories(configDir);
+    }
     return configDir;
+}
+
+char* getDataDir()
+{
+    char *dataDir = new char[100];
+    strcat(dataDir,getHomeDir());
+    strcat(dataDir,"/.local/share/smartcanteen-client");
+    if (!boost::filesystem::is_directory(dataDir))
+    {
+        boost::filesystem::create_directories(dataDir);
+    }
+    return dataDir;
 }
