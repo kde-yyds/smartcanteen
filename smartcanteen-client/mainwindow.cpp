@@ -2,7 +2,7 @@
 #include "./ui_mainwindow.h"
 
 
-#include "config.h"
+//#include "config.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

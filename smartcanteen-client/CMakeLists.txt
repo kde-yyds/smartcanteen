@@ -12,6 +12,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+find_package(Boost 1.62.0 REQUIRED COMPONENTS system filesystem thread)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -45,7 +47,8 @@ else()
     endif()
 endif()
 
-target_link_libraries(smartcanteen-client PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(smartcanteen-client PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ${Boost_LIBRARIES})
+#target_link_libraries (smartcanteen-client ${Boost_LIBRARIES})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
