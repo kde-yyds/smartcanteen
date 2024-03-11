@@ -42,3 +42,12 @@ void readConfig_Int (std::string fileName, int &Value)
     configFile.close();
 }
 
+
+
+//define some config varibles
+int studentNumber = 40;
+
+//we only want to read config when clicking "open settings" for the first time.
+bool ifReadConfig = true;
+//default is open settings, after clicking, turn to close settings ...
+bool ifOpenSettings = true;
