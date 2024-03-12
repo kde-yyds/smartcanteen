@@ -46,6 +46,8 @@ void readConfig_Int (std::string fileName, int &Value)
 
 //define some config varibles
 int studentNumber = 40;
+int currentNumber;
+int itemNumber;
 
 //we only want to read config when clicking "open settings" for the first time.
 bool ifReadConfig = true;

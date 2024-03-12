@@ -24,6 +24,8 @@ private slots:
 
     void on_startPushButton_clicked();
 
+    void on_listWidget_studentNumber_currentRowChanged(int currentRow);
+
 private:
     Ui::MainWindow *ui;
 };

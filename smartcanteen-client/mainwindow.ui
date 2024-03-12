@@ -153,6 +153,21 @@
       </rect>
      </property>
     </widget>
+    <widget class="QListWidget" name="listWidget_chooseItem">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>40</y>
+       <width>601</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+    </widget>
    </widget>
    <zorder>widget</zorder>
    <zorder>configWidget</zorder>
