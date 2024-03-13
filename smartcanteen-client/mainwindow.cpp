@@ -87,14 +87,23 @@ void MainWindow::on_startPushButton_clicked ()
         ui->listWidget_chooseItem->addItem (item);
     }
     ui->listWidget_chooseItem->setVerticalScrollMode (QListWidget::ScrollPerPixel); //make it possible to scroll smoothly with a touch pad (no animation!)
-    QScroller::grabGesture (ui->listWidget_chooseItem, QScroller::LeftMouseButtonGesture); //make it possible to drag with a mouse
-
+    QScroller::grabGesture (ui->listWidget_chooseItem, QScroller::LeftMouseButtonGesture); //make it possible to drag with a mouse  
 }
 
 
 void MainWindow::on_listWidget_studentNumber_currentRowChanged (int currentRow)
 {
     currentNumber = currentRow + 1;
+    int item = 1;
+    readData_Int(QString::number(currentNumber).toStdString(), item);
+    ui->listWidget_chooseItem->setCurrentRow(item-1);
+}
 
+
+void MainWindow::on_listWidget_chooseItem_currentRowChanged(int currentRow)
+{
+    currentItem = currentRow + 1;
+    item[currentNumber] = currentItem;
+    writeData_Int (QString::number(currentNumber).toStdString(), currentItem);
 }
 

@@ -26,6 +26,8 @@ private slots:
 
     void on_listWidget_studentNumber_currentRowChanged(int currentRow);
 
+    void on_listWidget_chooseItem_currentRowChanged(int currentRow);
+
 private:
     Ui::MainWindow *ui;
 };
