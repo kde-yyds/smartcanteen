@@ -1,46 +1,26 @@
 #ifndef STANDARDPATH_H
 #define STANDARDPATH_H
-#include <iostream>
 #endif // STANDARDPATH_H
 
-#include <string>
 #include <cstring>
 #include <boost/filesystem.hpp>
 #include "checkOS.h"
 
-//TODO:use QStandardPaths
+#include <QStandardPaths>
 
-
-char* getHomeDir()
+void getConfigDir(QString &configDir)
 {
-    if(isLinux() == true)
-        return getenv("HOME");
-    else
-        return NULL;////TODO: get home dir on windows
-}
-
-char* getConfigDir()
-{
-    char *configDir = new char[100];
-    strcpy(configDir,""); // workaround problem:configDir not clean (may contain config string) before clearing it
-    strcat(configDir,getHomeDir());
-
-    //std::cout<<"getHomeDir="<<getHomeDir()<<std::endl<<"configDir="<<configDir<<std::endl;
-
-    strcat(configDir,"/.config/smartcanteen-client");
-
-    //std::cout<<"configDir="<<configDir<<std::endl;
-
-    if (!boost::filesystem::is_directory(configDir))
+    configDir = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + "/smartcanteen-client";
+    if (!boost::filesystem::is_directory(configDir.toUtf8().data()))
     {
-        boost::filesystem::create_directories(configDir);
+        boost::filesystem::create_directories(configDir.toUtf8().data());
     }
-    return configDir;
 }
 
-char* getDataDir()
+void getDataDir(QString &dataDir)
 {
-    char *dataDir = new char[100];
+    dataDir = QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation).first() + "/smartcanteen-client";
+    /*char *dataDir = new char[100];
     strcpy(dataDir,"");
     strcat(dataDir,getHomeDir());
     strcat(dataDir,"/.local/share/smartcanteen-client");
@@ -48,5 +28,9 @@ char* getDataDir()
     {
         boost::filesystem::create_directories(dataDir);
     }
-    return dataDir;
+    return dataDir;*/
+    if (!boost::filesystem::is_directory(dataDir.toUtf8().data()))
+    {
+        boost::filesystem::create_directories(dataDir.toUtf8().data());
+    }
 }
