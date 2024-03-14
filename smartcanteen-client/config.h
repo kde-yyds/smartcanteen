@@ -55,7 +55,7 @@ void readConfig_Int (std::string fileName, int &Value)
 void writeData_String (std::string fileName, std::string Value)
 {
     QString dataDir;
-    getConfigDir(dataDir);
+    getDataDir(dataDir);
     chdir(dataDir.toUtf8().data());
     remove (fileName.c_str());
     std::ofstream dataFile (fileName);
@@ -66,7 +66,7 @@ void writeData_String (std::string fileName, std::string Value)
 void writeData_Int (std::string fileName, int Value)
 {
     QString dataDir;
-    getConfigDir(dataDir);
+    getDataDir(dataDir);
     chdir(dataDir.toUtf8().data());
     remove (fileName.c_str());
     std::ofstream dataFile (fileName);
@@ -77,7 +77,7 @@ void writeData_Int (std::string fileName, int Value)
 void readData_String (std::string fileName, std::string &Value)
 {
     QString dataDir;
-    getConfigDir(dataDir);
+    getDataDir(dataDir);
     chdir(dataDir.toUtf8().data());
     std::ifstream dataFile (fileName);
     std::getline(dataFile, Value);
@@ -87,7 +87,7 @@ void readData_String (std::string fileName, std::string &Value)
 void readData_Int (std::string fileName, int &Value)
 {
     QString dataDir;
-    getConfigDir(dataDir);
+    getDataDir(dataDir);
     chdir(dataDir.toUtf8().data());
     std::ifstream dataFile (fileName);
     dataFile >> Value;
