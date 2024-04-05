@@ -24,16 +24,16 @@
      </rect>
     </property>
     <property name="text">
-     <string>开始？？</string>
+     <string>我要食雪</string>
     </property>
    </widget>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>130</y>
-      <width>981</width>
-      <height>441</height>
+      <x>70</x>
+      <y>30</y>
+      <width>71</width>
+      <height>31</height>
      </rect>
     </property>
     <widget class="QListWidget" name="listWidget_studentNumber">
@@ -94,7 +94,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="general">
       <attribute name="title">
@@ -129,7 +129,77 @@
         <number>100</number>
        </property>
        <property name="value">
-        <number>40</number>
+        <number>43</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_grade">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>80</y>
+         <width>71</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>年级</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_class">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>140</y>
+         <width>71</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>班级</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_grade">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>80</y>
+         <width>42</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>20</number>
+       </property>
+       <property name="value">
+        <number>1</number>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_class">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>140</y>
+         <width>42</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>15</number>
        </property>
       </widget>
      </widget>
@@ -201,6 +271,9 @@
          <height>31</height>
         </rect>
        </property>
+       <property name="text">
+        <string>127.0.0.1</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_userName">
        <property name="geometry">
@@ -211,6 +284,9 @@
          <height>31</height>
         </rect>
        </property>
+       <property name="text">
+        <string>user</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_userPasswd">
        <property name="geometry">
@@ -220,6 +296,12 @@
          <width>331</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::PasswordEchoOnEdit</enum>
        </property>
       </widget>
      </widget>
