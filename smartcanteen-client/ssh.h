@@ -61,3 +61,12 @@ void scp_push_local_files_to_remote(std::string remote_dir, std::string local_di
     system(scp_command.c_str());
 }
 
+void get_list_from_remote()
+{
+    std::string remote_dir = "/opt/smartcanteen/remote/";
+    std::string local_dir = "";
+    QString AppLocalDataLocation;
+    getDataDir(AppLocalDataLocation);
+    local_dir = AppLocalDataLocation.toStdString() + "/";
+    scp_get_files_from_remote(remote_dir, local_dir);
+}

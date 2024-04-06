@@ -85,6 +85,7 @@ void MainWindow::on_startPushButton_clicked()
 {
     if(ifOpenMainWidget)
     {
+        get_list_from_remote();
         ui->listWidget_studentNumber->clear();
 
         // show student number on the left listWidget
@@ -99,11 +100,11 @@ void MainWindow::on_startPushButton_clicked()
 
         //show items on the right listWidget
         //this is a stub. we should get these files from a server and save them in a data dir.
-        readConfig_Int("itemNumber", itemNumber);
+        readData_Int("itemNumber", itemNumber, "remote");
         for (int i = 1; i <= itemNumber; i++)
         {
             std::string data;
-            readConfig_String(QString::number(i).toStdString(), data);
+            readData_String(QString::number(i).toStdString(), data, "remote");
             QListWidgetItem *item = new QListWidgetItem (QString::fromStdString(data));
             item->setTextAlignment (Qt::AlignCenter);
             ui->listWidget_chooseItem->addItem (item);
@@ -136,7 +137,7 @@ void MainWindow::on_listWidget_studentNumber_currentRowChanged(int currentRow)
 {
     currentNumber = currentRow + 1;
     int item = 1;
-    readData_Int(QString::number(currentNumber).toStdString(), item, "remote");
+    readData_Int(QString::number(currentNumber).toStdString(), item, "local");
     ui->listWidget_chooseItem->setCurrentRow(item-1);
 }
 
@@ -145,6 +146,6 @@ void MainWindow::on_listWidget_chooseItem_currentRowChanged(int currentRow)
 {
     currentItem = currentRow + 1;
     item[currentNumber] = currentItem;
-    writeData_Int (QString::number(currentNumber).toStdString(), currentItem, "local");
+    writeData_Int(QString::number(currentNumber).toStdString(), currentItem, "local");
 }
 
