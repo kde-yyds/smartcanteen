@@ -63,10 +63,26 @@ void scp_push_local_files_to_remote(std::string remote_dir, std::string local_di
 
 void get_list_from_remote()
 {
-    std::string remote_dir = "/opt/smartcanteen/remote/";
+    std::string remote_dir = "/opt/smartcanteen/remote/"; //TODO: make it configurable to adapt different os (like windows
     std::string local_dir = "";
     QString AppLocalDataLocation;
     getDataDir(AppLocalDataLocation);
     local_dir = AppLocalDataLocation.toStdString() + "/";
     scp_get_files_from_remote(remote_dir, local_dir);
+}
+
+
+void push_data_to_remote()
+{
+    std::string remote_dir = "/opt/smartcanteen/list/"; //TODO: make it configurable to adapt different os (like windows
+    std::string local_dir = "";
+/*    remote_dir += QString::number(grade).toStdString()
+               + "_"
+               + QString::number(Class).toStdString()
+               + "/";
+*/  //store data in folder QString::number(grade).toStdString() + "_" + QString::number(Class).toStdString(), instead not remane it here
+    QString AppLocalDataLocation;
+    getDataDir(AppLocalDataLocation);
+    local_dir = AppLocalDataLocation.toStdString() + "/" + local_storage_dir + "/";
+    scp_push_local_files_to_remote(remote_dir, local_dir);
 }

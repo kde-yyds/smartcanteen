@@ -129,6 +129,9 @@ int itemNumber;
 int currentItem;
 int item[100]={1};
 
+//local data directory
+std::string local_storage_dir = QString::number(grade).toStdString() + "_" + QString::number(Class).toStdString();
+
 //we only want to read config when clicking "open settings" for the first time.
 bool ifReadConfig = true;
 //default is open settings, after clicking, turn to close settings ...

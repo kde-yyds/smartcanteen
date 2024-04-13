@@ -28,6 +28,8 @@ private slots:
 
     void on_listWidget_chooseItem_currentRowChanged(int currentRow);
 
+    void on_pushButton_submit_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

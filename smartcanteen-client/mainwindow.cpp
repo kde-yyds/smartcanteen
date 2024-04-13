@@ -137,7 +137,7 @@ void MainWindow::on_listWidget_studentNumber_currentRowChanged(int currentRow)
 {
     currentNumber = currentRow + 1;
     int item = 1;
-    readData_Int(QString::number(currentNumber).toStdString(), item, "local");
+    readData_Int(QString::number(currentNumber).toStdString(), item, local_storage_dir);
     ui->listWidget_chooseItem->setCurrentRow(item-1);
 }
 
@@ -146,6 +146,12 @@ void MainWindow::on_listWidget_chooseItem_currentRowChanged(int currentRow)
 {
     currentItem = currentRow + 1;
     item[currentNumber] = currentItem;
-    writeData_Int(QString::number(currentNumber).toStdString(), currentItem, "local");
+    writeData_Int(QString::number(currentNumber).toStdString(), currentItem, local_storage_dir);
+}
+
+
+void MainWindow::on_pushButton_submit_clicked()
+{
+    push_data_to_remote();
 }
 

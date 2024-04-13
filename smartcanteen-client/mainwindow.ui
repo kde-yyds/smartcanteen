@@ -336,10 +336,24 @@
      </property>
     </widget>
    </widget>
+   <widget class="QPushButton" name="pushButton_submit">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>640</y>
+      <width>85</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>上传数据</string>
+    </property>
+   </widget>
    <zorder>widget</zorder>
    <zorder>configWidget</zorder>
    <zorder>startPushButton</zorder>
    <zorder>configPushButton</zorder>
+   <zorder>pushButton_submit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
