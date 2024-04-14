@@ -152,6 +152,7 @@ void MainWindow::on_listWidget_chooseItem_currentRowChanged(int currentRow)
 
 void MainWindow::on_pushButton_submit_clicked()
 {
+    writeData_Int("number", studentNumber, local_storage_dir);
     push_data_to_remote();
 }
 
