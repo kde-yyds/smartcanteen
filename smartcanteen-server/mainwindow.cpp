@@ -62,3 +62,42 @@ void MainWindow::on_listWidget_studentNumber_currentRowChanged(int currentRow)
     ui->listWidget_chooseItem->setCurrentRow(item-1);
 }
 
+
+void MainWindow::on_spinBox_number_valueChanged()
+{
+    number = ui->spinBox_number->value();
+    ui->listWidget_number->clear(); //clear listWidget before adding new lines.
+    for (int i = 1; i <= number; i++)
+    {
+        QListWidgetItem *item = new QListWidgetItem (QString::number(i));
+        item->setTextAlignment (Qt::AlignCenter);
+        ui->listWidget_number->addItem (item);
+    }
+    ui->listWidget_number->setVerticalScrollMode (QListWidget::ScrollPerPixel); //make it possible to scroll smoothly with a touch pad (no animation!)
+    QScroller::grabGesture (ui->listWidget_number, QScroller::LeftMouseButtonGesture); //make it possible to drag with a mouse
+
+}
+
+
+void MainWindow::on_listWidget_number_currentRowChanged(int currentRow)
+{
+    currentNumber_editWidget = currentRow + 1;
+    std::string text;
+    readData_String(QString::number(currentNumber_editWidget).toStdString(), text, "../remote");
+    ui->lineEdit_name->setText(text.data());
+}
+
+
+void MainWindow::on_lineEdit_name_textChanged(const QString &arg1)
+{
+    writeData_String(QString::number(currentNumber_editWidget).toStdString(), arg1.toStdString(), "../remote");
+}
+
+
+void MainWindow::on_listWidget_chooseItem_currentRowChanged(int currentRow)
+{
+    int item = 1;
+    readData_Int(QString::number(currentNumber).toStdString(), item, QString::number(ui->spinBox_grade->value()).toStdString() + "_" + QString::number(ui->spinBox_class->value()).toStdString());
+    ui->listWidget_chooseItem->setCurrentRow(item-1);
+}
+

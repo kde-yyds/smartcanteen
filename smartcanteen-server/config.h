@@ -62,3 +62,8 @@ int currentNumber;
 int itemNumber;
 int currentItem;
 int item[100]={1};
+int number=10;
+
+//another set of varibles for edit widgets
+int currentNumber_editWidget;
+std::string item_editWidget[100];

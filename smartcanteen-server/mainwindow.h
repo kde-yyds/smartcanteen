@@ -22,6 +22,14 @@ private slots:
 
     void on_listWidget_studentNumber_currentRowChanged(int currentRow);
 
+    void on_spinBox_number_valueChanged();
+
+    void on_listWidget_number_currentRowChanged(int currentRow);
+
+    void on_lineEdit_name_textChanged(const QString &arg1);
+
+    void on_listWidget_chooseItem_currentRowChanged(int currentRow);
+
 private:
     Ui::MainWindow *ui;
 };
