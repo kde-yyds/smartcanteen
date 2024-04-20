@@ -87,6 +87,7 @@ void MainWindow::on_startPushButton_clicked()
     {
         get_list_from_remote();
         ui->listWidget_studentNumber->clear();
+        ui->listWidget_chooseItem->clear();
 
         // show student number on the left listWidget
         for (int i = 1; i <= studentNumber; i++)
