@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>我要食雪</string>
+     <string>开始选择</string>
     </property>
    </widget>
    <widget class="QWidget" name="widget" native="true">
@@ -113,7 +113,7 @@
         <string>学生数量</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
       <widget class="QSpinBox" name="spinBox_studentNumber">
@@ -145,7 +145,7 @@
         <string>年级</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="label_class">
@@ -161,7 +161,7 @@
         <string>班级</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
       <widget class="QSpinBox" name="spinBox_grade">
@@ -220,7 +220,7 @@
         <string>ssh服务器</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="label_ipAddress">
@@ -301,7 +301,7 @@
         <string>1</string>
        </property>
        <property name="echoMode">
-        <enum>QLineEdit::PasswordEchoOnEdit</enum>
+        <enum>QLineEdit::EchoMode::PasswordEchoOnEdit</enum>
        </property>
       </widget>
      </widget>
@@ -319,7 +319,7 @@
       <string>设置</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_saveConfigs">

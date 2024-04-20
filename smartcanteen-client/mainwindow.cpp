@@ -113,7 +113,7 @@ void MainWindow::on_startPushButton_clicked()
         QScroller::grabGesture (ui->listWidget_chooseItem, QScroller::LeftMouseButtonGesture); //make it possible to drag with a mouse
 
 
-        ui->startPushButton->setText("停止食雪");
+        ui->startPushButton->setText("停止选择");
         QPropertyAnimation *animation = new QPropertyAnimation {this->ui->widget, "geometry"};
         animation->setDuration(1000);
         animation->setStartValue(this->ui->widget->geometry());
@@ -121,7 +121,7 @@ void MainWindow::on_startPushButton_clicked()
         animation->setEasingCurve(QEasingCurve::OutExpo);
         animation->start();
     }else{
-        ui->startPushButton->setText("我要食雪");
+        ui->startPushButton->setText("我要选择");
         QPropertyAnimation *animation = new QPropertyAnimation {this->ui->widget, "geometry"};
         animation->setDuration(1000);
         animation->setStartValue(this->ui->widget->geometry());
