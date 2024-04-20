@@ -121,7 +121,7 @@ void MainWindow::on_startPushButton_clicked()
         animation->setEasingCurve(QEasingCurve::OutExpo);
         animation->start();
     }else{
-        ui->startPushButton->setText("我要选择");
+        ui->startPushButton->setText("开始选择");
         QPropertyAnimation *animation = new QPropertyAnimation {this->ui->widget, "geometry"};
         animation->setDuration(1000);
         animation->setStartValue(this->ui->widget->geometry());
