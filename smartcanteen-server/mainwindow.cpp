@@ -26,6 +26,7 @@ void MainWindow::on_pushButton_show_clicked()
     subDir = QString::number(ui->spinBox_grade->value()).toStdString() + "_" + QString::number(ui->spinBox_class->value()).toStdString();
     ui->listWidget_chooseItem->setMouseTracking(false);
     ui->listWidget_studentNumber->clear();
+    ui->listWidget_chooseItem->clear();
 
     readData_Int("number", studentNumber, subDir);
 
