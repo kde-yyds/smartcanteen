@@ -66,6 +66,7 @@ void MainWindow::on_listWidget_studentNumber_currentRowChanged(int currentRow)
 void MainWindow::on_spinBox_number_valueChanged()
 {
     number = ui->spinBox_number->value();
+    writeData_Int("itemNumber", number, "../remote");
     ui->listWidget_number->clear(); //clear listWidget before adding new lines.
     for (int i = 1; i <= number; i++)
     {
@@ -100,4 +101,3 @@ void MainWindow::on_listWidget_chooseItem_currentRowChanged(int currentRow)
     readData_Int(QString::number(currentNumber).toStdString(), item, QString::number(ui->spinBox_grade->value()).toStdString() + "_" + QString::number(ui->spinBox_class->value()).toStdString());
     ui->listWidget_chooseItem->setCurrentRow(item-1);
 }
-
